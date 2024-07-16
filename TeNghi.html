@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thử thách toán học!</title>
+    <style>
+        body {
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            transition: background 1s ease-in-out;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: opacity 1s ease-in-out;
+        }
+        .hidden {
+            opacity: 0;
+        }
+        button {
+            display: block;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 0;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .birthday-images {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .birthday-images img {
+            position: absolute;
+            max-width: 30%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .image1 {
+            top: 10px;
+            left: 10px;
+        }
+        .image2 {
+            bottom: 10px;
+            right: 10px;
+        }
+        .birthday-message1 {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: black;
+            text-align: right;
+        }
+        .birthday-message2 {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: calc(30% + 30px); /* cách hình ảnh 30px */
+            color: black;
+            text-align: left;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translate(0, 0) rotate(0); }
+            10%, 90% { transform: translate(-1px, -1px) rotate(-1deg); }
+            20%, 80% { transform: translate(-3px, 0) rotate(1deg); }
+            30%, 50%, 70% { transform: translate(3px, 2px) rotate(0); }
+            40%, 60% { transform: translate(1px, -1px) rotate(1deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kiểm tra IQ!</h1>
+        <p>Hãy trả lời câu hỏi toán học sau:</p>
+        <p>2 + 2 = ??????????????????????</p>
+        <button onclick="checkAnswer(1)">sin(2)cos(2)+cos(2)sin(2)</button>
+        <button onclick="checkAnswer(2)">4</button>
+        <button onclick="checkAnswer(3)">tan(2)</button>
+        <button onclick="checkAnswer(4)">1607</button>
+        <div id="message"></div>
+    </div>
+    <div class="birthday-images" id="birthdayImages">
+        <img src="hinh1.png" alt="Chúc mừng sinh nhật" class="image1">
+        <img src="hinh2.png" alt="Chúc mừng sinh nhật" class="image2">
+    </div>
+    <div class="birthday-message1" id="birthdayMessage1">
+        <h2>Hey hey :)), sinh nhật dui dẻ nha ní</h2>
+        <p>Chúc em đã đang và sẽ có một ngày sinh nhật thật vui vẻ, tuổi mới sẽ gặt hái thêm được nhiều niềm vui hơn, cũng như tăng tiến hơn chong nghề :P </p>
+	<p>Chúc mọi thứ tốt đẹp nhất đều dành cho em, chúc con đường tình duyên bớt gặp người hãm lại @___@, cũng như lớn ròi! </p>
+        <p>Vì thé đừng có thái độ, đày đọa gia sư chép phạt nx! :P </p>
+    </div>
+    <div class="birthday-message2" id="birthdayMessage2">
+        <h2>Nhìn đây nữa!</h2>
+        <p>Những dòng này là chúc thêm :)), hy vọng tuổi mới em sẽ mãi cháy với nghề, học hành ổn áp hơn,</p>
+	<p>mãi xinh xắn, vui tươi và YÊU THÍCH MÔN TOÁN NKA! pie pie :))), nào lên SG anh gửi quà cho nhó ~~</p>
+    </div>
+    <audio id="birthdaySong" src="sinhnhatduide.mp3"></audio>
+    <script>
+        function checkAnswer(answer) {
+            const messageDiv = document.getElementById('message');
+            const birthdaySong = document.getElementById('birthdaySong');
+            const container = document.querySelector('.container');
+            const birthdayImages = document.getElementById('birthdayImages');
+            const birthdayMessage1 = document.getElementById('birthdayMessage1');
+            const birthdayMessage2 = document.getElementById('birthdayMessage2');
+            if (answer === 2) {
+                messageDiv.innerHTML = 'Hay dậy! :))) thiên tài toán học!';
+                container.classList.add('hidden');
+                document.body.style.background = 'url("background_correct.jpg") no-repeat center center fixed';
+                document.body.style.backgroundSize = 'cover';
+                setTimeout(() => {
+                    birthdayImages.style.display = 'block';
+                    birthdayMessage1.style.display = 'block';
+                    birthdayMessage2.style.display = 'block';
+                    startShaking();
+                }, 1000);
+                birthdaySong.play();
+            } else {
+                messageDiv.innerHTML = 'Có học bài hông dậy ba _._';
+            }
+        }
+
+        function startShaking() {
+            const images = document.querySelectorAll('.birthday-images img');
+            let shakeInterval = setInterval(() => {
+                images.forEach(image => image.classList.add('shake'));
+                setTimeout(() => {
+                    images.forEach(image => image.classList.remove('shake'));
+                }, 500);
+            }, 3000);
+
+            setTimeout(() => {
+                clearInterval(shakeInterval);
+                images[0].src = 'hinh3.png';
+                images[1].src = 'hinh4.png';
+                startShaking(); // Start shaking again with new images
+            }, 10000); // Change images after 10 seconds
+        }
+    </script>
+</body>
+</html>
