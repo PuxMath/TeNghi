@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đi date hongg :> </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="hearts" id="hearts"></div>
+  <div class="celebration" id="celebration"></div>
+
+  <!-- Audio element for background music -->
+  <audio id="background-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <div class="card">
+      <div class="heart-bg"></div>
+      <h1>Đi date hongg :></h1>
+      <p class="intro">Gửi bé cưng của tuiii,<br>Tối maii ii chơi hăm, mới thi xong, xõa iii nà, lựa chọn điều emm muốn
+        làm với anh naa!</p>
+
+      <div id="date-form">
+        <div class="location-section">
+          <h2>Khởi động naaa :></h2>
+          <div class="options-container" id="location1">
+            <div class="option" data-value="café">
+              <div class="radio"></div>
+              <div class="option-text">
+                <div class="option-name">Iii photooboothh</div>
+                <div class="option-desc">Chụp hình lưu lại kỉ nịm với nhaooo</div>
+              </div>
+            </div>
+            <div class="option" data-value="breakfast">
+              <div class="radio"></div>
+              <div class="option-text">
+                <div class="option-name">Đii một quán cafee đẹp đẹp emm thích naaa</div>
+                <div class="option-desc">Lần này hong phãi chạy deadline nựa T_T </div>
+              </div>
+            </div>
+            <div class="option" data-value="breakfast">
+              <div class="radio"></div>
+              <div class="option-text">
+                <div class="option-name">Chemmm phimmmm</div>
+                <div class="option-desc">Lần này là cương vị ngừi iuuuu <3 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-section">
+            <h2>Iiii ăn ở đău taaa</h2>
+            <div class="options-container" id="location2">
+              <div class="option" data-value="movie">
+                <div class="radio"></div>
+                <div class="option-text">
+                  <div class="option-name">Ănn quán tháiiiiii</div>
+                  <div class="option-desc">Anhh chưa ii bao giờ hiiii</div>
+                </div>
+              </div>
+              <div class="option" data-value="museum">
+                <div class="radio"></div>
+                <div class="option-text">
+                  <div class="option-name">Ănn quán ăn Hàn Quốccc</div>
+                  <div class="option-desc">Nếuuu emmm thíchhhh</div>
+                </div>
+              </div>
+              <div class="option" data-value="cooking">
+                <div class="radio"></div>
+                <div class="option-text">
+                  <div class="option-name">Ănn bún bòooo</div>
+                  <div class="option-desc">Chỗ ở đường Hoàng Dịu bữa emm thèm áaaaa</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-section">
+            <h2>Địa điểm 3: Buổi tối lãng mạn</h2>
+            <div class="options-container" id="location3">
+              <div class="option" data-value="dinner">
+                <div class="radio"></div>
+                <div class="option-text">
+                  <div class="option-name">Ăn tối dưới ánh nến mặp mờ</div>
+                  <div class="option-desc">Bữa tối 1m78 :> hiiii </div>
+                </div>
+              </div>
+              <div class="option" data-value="walk">
+                <div class="radio"></div>
+                <div class="option-text">
+                  <div class="option-name">Ngắm ánh trăng</div>
+                  <div class="option-desc">Thiệc ra nà ngắm nhaooo</div>
+                </div>
+              </div>
+              <div class="option" data-value="rooftop">
+                <div class="radio"></div>
+                <div class="option-text">
+                  <div class="option-name">Ômmm nhao ngủuu</div>
+                  <div class="option-desc">Healthyyyyyy quá haaaaaa</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="submit-btn" id="submit">Emmm chọn xum ùiii</button>
+        </div>
+
+        <div class="result" id="result">
+          <h2>Pé cưng sáng sút!</h2>
+          <p>Chơm emmm.</p>
+          <p id="choices-summary"></p>
+          <p>Anh iu emmm nhìu</p>
+          <button class="back-btn" id="back">Chọn lại</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
